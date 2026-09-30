@@ -1,0 +1,1654 @@
+/* =====================================================
+   WEB EDUKASI ANTIEMETIKA
+   3D EMERALD MEDICAL DESIGN
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#eef8f1;
+    color:#20372a;
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:9999;
+}
+
+.navbar{
+    min-height:72px;
+    padding:0 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:
+        linear-gradient(135deg,#075e42,#159447,#0b704c);
+
+    box-shadow:
+        0 5px 0 rgba(0,55,35,.25),
+        0 12px 30px rgba(0,70,40,.25);
+
+    border-bottom:1px solid rgba(255,255,255,.18);
+}
+
+.logo{
+    color:#fff;
+    font-size:20px;
+    font-weight:bold;
+    letter-spacing:.3px;
+    text-shadow:0 3px 8px rgba(0,0,0,.25);
+}
+
+.nav-menu{
+    list-style:none;
+    display:flex;
+    gap:18px;
+    align-items:center;
+}
+
+.nav-menu a{
+    position:relative;
+    color:#fff;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:bold;
+    padding:8px 3px;
+    transition:.3s;
+}
+
+.nav-menu a::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:0;
+    width:0;
+    height:3px;
+    border-radius:10px;
+    background:#b9f3ce;
+    transform:translateX(-50%);
+    transition:.3s;
+}
+
+.nav-menu a:hover{
+    color:#caffda;
+    transform:translateY(-2px);
+}
+
+.nav-menu a:hover::after{
+    width:100%;
+}
+
+
+/* =====================================================
+   SLIDER
+===================================================== */
+
+.slider-container{
+    padding-top:72px;
+}
+
+.slide{
+    display:none;
+    min-height:calc(100vh - 72px);
+    animation:pageIn .7s ease;
+}
+
+.slide.active{
+    display:block;
+}
+
+@keyframes pageIn{
+    from{
+        opacity:0;
+        transform:translateY(25px) scale(.98);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    position:relative;
+    min-height:calc(100vh - 72px);
+    padding:70px 8%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:70px;
+    overflow:hidden;
+
+    background:
+        radial-gradient(circle at 82% 20%,rgba(44,180,105,.25),transparent 23%),
+        radial-gradient(circle at 15% 85%,rgba(73,190,115,.16),transparent 28%),
+        linear-gradient(135deg,#f5fff7,#dff3e5);
+}
+
+
+/* Decorative background circles */
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    right:-180px;
+    top:-150px;
+    border-radius:50%;
+    background:rgba(24,139,78,.10);
+    box-shadow:
+        0 0 0 35px rgba(24,139,78,.04),
+        0 0 0 70px rgba(24,139,78,.025);
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:170px;
+    height:170px;
+    left:-70px;
+    bottom:-50px;
+    border-radius:50%;
+    background:#bde8ca;
+    opacity:.35;
+}
+
+.hero-text{
+    position:relative;
+    z-index:5;
+    max-width:700px;
+}
+
+.subtitle{
+    display:inline-block;
+    color:#087744;
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:15px;
+    padding:7px 15px;
+    border-radius:30px;
+
+    background:rgba(255,255,255,.65);
+
+    box-shadow:
+        4px 5px 12px rgba(34,110,65,.10),
+        inset 2px 2px 5px rgba(255,255,255,.9);
+}
+
+.hero h1{
+    color:#073f2b;
+    font-size:58px;
+    line-height:1.1;
+    margin-bottom:22px;
+    text-shadow:
+        0 5px 0 rgba(7,63,43,.08),
+        0 12px 25px rgba(7,63,43,.12);
+}
+
+.hero h1 span{
+    color:#159447;
+}
+
+.hero-text>p:not(.subtitle){
+    color:#53675a;
+    font-size:17px;
+    max-width:650px;
+    margin-bottom:32px;
+}
+
+
+/* =====================================================
+   3D BUTTON
+===================================================== */
+
+.button{
+    display:inline-block;
+    padding:15px 32px;
+    border:none;
+    border-radius:35px;
+    background:linear-gradient(145deg,#25a65d,#087744);
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    cursor:pointer;
+
+    box-shadow:
+        0 6px 0 #04552f,
+        0 12px 25px rgba(7,119,68,.30),
+        inset 0 2px 2px rgba(255,255,255,.25);
+
+    transition:.25s;
+}
+
+.button:hover{
+    transform:translateY(-5px);
+    box-shadow:
+        0 9px 0 #04552f,
+        0 17px 30px rgba(7,119,68,.35),
+        inset 0 2px 3px rgba(255,255,255,.3);
+}
+
+.button:active{
+    transform:translateY(3px);
+    box-shadow:
+        0 3px 0 #04552f,
+        0 7px 15px rgba(7,119,68,.2);
+}
+
+
+/* =====================================================
+   3D MEDICINE OBJECT
+===================================================== */
+
+.hero-icon{
+    position:relative;
+    z-index:5;
+
+    width:250px;
+    height:250px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle at 35% 25%,#ffffff,#d9f2df 55%,#b6ddc2);
+
+    box-shadow:
+        20px 25px 45px rgba(17,91,48,.22),
+        -10px -10px 25px rgba(255,255,255,.9),
+        inset 8px 8px 20px rgba(255,255,255,.8);
+
+    animation:floatMedicine 4s ease-in-out infinite;
+}
+
+
+/* Ring */
+
+.hero-icon::before{
+    content:"";
+    position:absolute;
+    width:285px;
+    height:285px;
+    border:2px dashed rgba(8,119,68,.25);
+    border-radius:50%;
+    animation:spinRing 18s linear infinite;
+}
+
+.hero-icon::after{
+    content:"✚";
+    position:absolute;
+    top:12px;
+    right:12px;
+
+    width:45px;
+    height:45px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+    background:linear-gradient(145deg,#25a65d,#087744);
+    color:white;
+    font-size:22px;
+
+    box-shadow:
+        4px 5px 12px rgba(7,119,68,.25),
+        inset 2px 2px 4px rgba(255,255,255,.3);
+}
+
+
+/* Emoji medicine */
+
+.hero-icon{
+    font-size:105px;
+    text-shadow:
+        8px 10px 8px rgba(0,70,35,.18);
+}
+
+@keyframes floatMedicine{
+    0%,100%{
+        transform:translateY(0) rotate(0deg);
+    }
+
+    50%{
+        transform:translateY(-15px) rotate(3deg);
+    }
+}
+
+@keyframes spinRing{
+    from{
+        transform:rotate(0);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.section{
+    position:relative;
+    min-height:calc(100vh - 72px);
+    padding:75px 8% 100px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(circle at 5% 20%,rgba(21,148,71,.08),transparent 20%),
+        radial-gradient(circle at 95% 80%,rgba(21,148,71,.08),transparent 22%),
+        #ffffff;
+}
+
+.section::before{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    right:-100px;
+    top:-100px;
+    border-radius:50%;
+    background:rgba(21,148,71,.06);
+}
+
+.section::after{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    left:-50px;
+    bottom:30px;
+    border-radius:50%;
+    background:rgba(21,148,71,.05);
+}
+
+.slide:nth-child(even) .section{
+    background:
+        radial-gradient(circle at 85% 15%,rgba(35,166,93,.12),transparent 25%),
+        linear-gradient(135deg,#f2fbf4,#e1f2e5);
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.section-title{
+    position:relative;
+    z-index:2;
+    max-width:780px;
+    margin:0 auto 38px;
+    text-align:center;
+}
+
+.section-title p:first-child{
+    display:inline-block;
+    color:#087744;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:2px;
+
+    padding:6px 14px;
+    border-radius:20px;
+    background:#e0f5e7;
+
+    box-shadow:
+        3px 4px 8px rgba(20,110,60,.10);
+}
+
+.section-title h2,
+.tentang-header h2{
+    color:#064d36;
+    font-size:38px;
+    margin:10px 0 12px;
+
+    text-shadow:
+        0 4px 10px rgba(6,77,54,.12);
+}
+
+.description{
+    color:#596b5e;
+}
+
+
+/* =====================================================
+   3D CARD SYSTEM
+===================================================== */
+
+.content-box,
+.history-card,
+.card,
+.health-card,
+.marketing-card,
+.anggota-card{
+
+    background:
+        linear-gradient(145deg,#ffffff,#f0f8f2);
+
+    border:1px solid rgba(21,148,71,.12);
+    border-radius:22px;
+
+    box-shadow:
+        10px 12px 25px rgba(30,86,47,.11),
+        -7px -7px 18px rgba(255,255,255,.95),
+        inset 1px 1px 0 rgba(255,255,255,.9);
+
+    transition:.35s;
+}
+
+
+/* =====================================================
+   CONTENT BOX
+===================================================== */
+
+.content-box{
+    position:relative;
+    z-index:2;
+
+    max-width:950px;
+    width:100%;
+
+    margin:0 auto 25px;
+    padding:32px;
+
+    border-left:7px solid #159447;
+    overflow:hidden;
+}
+
+.content-box::before{
+    content:"";
+    position:absolute;
+    width:130px;
+    height:130px;
+    right:-45px;
+    top:-45px;
+    border-radius:50%;
+    background:#d9f2df;
+}
+
+.content-box::after{
+    content:"✚";
+    position:absolute;
+    right:28px;
+    top:22px;
+    color:#159447;
+    font-size:25px;
+    opacity:.5;
+}
+
+.content-box p{
+    position:relative;
+    z-index:2;
+    color:#53665a;
+}
+
+
+/* =====================================================
+   HISTORY
+===================================================== */
+
+.history-container{
+    position:relative;
+    z-index:2;
+
+    max-width:950px;
+    width:100%;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.history-card{
+    display:flex;
+    gap:18px;
+    padding:22px;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.history-card::after{
+    content:"";
+    position:absolute;
+    width:90px;
+    height:90px;
+    right:-35px;
+    bottom:-35px;
+    border-radius:50%;
+    background:#dff3e4;
+}
+
+.history-card:hover{
+    transform:translateY(-9px) rotateX(2deg);
+
+    box-shadow:
+        14px 20px 35px rgba(25,88,46,.17),
+        -8px -8px 20px rgba(255,255,255,.95);
+}
+
+.history-card:last-child{
+    grid-column:span 2;
+}
+
+.history-number{
+    min-width:55px;
+    height:55px;
+
+    border-radius:18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(145deg,#2bb468,#087744);
+
+    color:#fff;
+    font-size:13px;
+    font-weight:bold;
+
+    box-shadow:
+        5px 7px 13px rgba(7,119,68,.25),
+        inset 3px 3px 5px rgba(255,255,255,.25);
+
+    transform:rotate(-3deg);
+}
+
+.history-content{
+    position:relative;
+    z-index:2;
+    flex:1;
+}
+
+.history-content h3,
+.card h3,
+.health-card h3,
+.marketing-card h3{
+    color:#087744;
+    margin-bottom:7px;
+}
+
+.history-content p,
+.card p,
+.health-card p,
+.marketing-card p,
+.ethics-box p,
+.danger-box p{
+    color:#58695d;
+}
+
+
+/* =====================================================
+   GENERAL CARDS
+===================================================== */
+
+.card-container,
+.marketing-container{
+    position:relative;
+    z-index:2;
+
+    max-width:1050px;
+    width:100%;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.card{
+    position:relative;
+    padding:27px;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    width:110px;
+    height:110px;
+    right:-45px;
+    top:-45px;
+    border-radius:50%;
+    background:#dff3e4;
+}
+
+.card::after{
+    content:"";
+    position:absolute;
+    width:35px;
+    height:35px;
+    right:22px;
+    bottom:20px;
+    border-radius:50%;
+    background:#bfe7cb;
+    opacity:.35;
+}
+
+.card:hover,
+.health-card:hover,
+.marketing-card:hover{
+    transform:translateY(-10px);
+
+    box-shadow:
+        14px 20px 35px rgba(25,88,46,.17),
+        -8px -8px 20px rgba(255,255,255,.95);
+}
+
+.card-icon,
+.health-icon{
+    position:relative;
+    z-index:2;
+
+    width:60px;
+    height:60px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(145deg,#e9f9ed,#c9e8d2);
+
+    font-size:32px;
+
+    margin-bottom:15px;
+
+    box-shadow:
+        5px 7px 13px rgba(30,100,55,.13),
+        inset 3px 3px 6px rgba(255,255,255,.8);
+}
+
+
+/* =====================================================
+   KEGUNAAN
+===================================================== */
+
+.kegunaan-title{
+    position:relative;
+    z-index:2;
+
+    max-width:950px;
+    width:100%;
+    margin:15px auto 20px;
+}
+
+.kegunaan-title p{
+    color:#087744;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.kegunaan-title h2{
+    color:#064d36;
+    font-size:30px;
+    margin-top:4px;
+}
+
+.info-list{
+    position:relative;
+    z-index:2;
+
+    max-width:950px;
+    width:100%;
+    margin:auto;
+}
+
+.info-item{
+    display:flex;
+    gap:18px;
+    align-items:center;
+
+    padding:19px 23px;
+    margin-bottom:15px;
+
+    background:
+        linear-gradient(145deg,#ffffff,#f0f8f2);
+
+    border-radius:19px;
+
+    box-shadow:
+        8px 10px 20px rgba(30,86,47,.10),
+        -5px -5px 14px rgba(255,255,255,.95);
+
+    transition:.3s;
+}
+
+.info-item:hover{
+    transform:translateX(10px) translateY(-3px);
+
+    box-shadow:
+        12px 14px 25px rgba(30,86,47,.14),
+        -5px -5px 14px rgba(255,255,255,.95);
+}
+
+.info-item span,
+.marketing-card span{
+    min-width:46px;
+    height:46px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:
+        linear-gradient(145deg,#dcf5e3,#bde2c8);
+
+    color:#087744;
+    font-weight:bold;
+
+    box-shadow:
+        4px 5px 10px rgba(30,100,55,.15),
+        inset 2px 2px 5px rgba(255,255,255,.8);
+}
+
+
+/* =====================================================
+   EFFECT BOX
+===================================================== */
+
+.warning-box,
+.danger-box,
+.ethics-box{
+    position:relative;
+    z-index:2;
+
+    max-width:900px;
+    width:100%;
+    margin:0 auto 20px;
+
+    padding:27px 30px;
+
+    background:
+        linear-gradient(145deg,#ffffff,#f0f8f2);
+
+    border:1px solid #cde6d4;
+    border-left:7px solid #159447;
+
+    border-radius:20px;
+
+    box-shadow:
+        10px 12px 25px rgba(30,86,47,.11),
+        -6px -6px 16px rgba(255,255,255,.95);
+}
+
+.warning-box h3,
+.danger-box h3,
+.ethics-box h3{
+    color:#087744;
+    margin-bottom:10px;
+}
+
+.warning-box ul{
+    padding-left:22px;
+    color:#59695d;
+}
+
+.warning-box li{
+    margin-bottom:5px;
+}
+
+.danger-box{
+    border-left-color:#087744;
+}
+
+
+/* =====================================================
+   HEALTH
+===================================================== */
+
+.health-container{
+    position:relative;
+    z-index:2;
+
+    max-width:1050px;
+    width:100%;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.health-card{
+    position:relative;
+    padding:27px 20px;
+    text-align:center;
+    overflow:hidden;
+}
+
+.health-card::before{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:100px;
+    right:-45px;
+    top:-45px;
+    border-radius:50%;
+    background:#dff3e4;
+}
+
+.health-card::after{
+    content:"";
+    position:absolute;
+    width:45px;
+    height:45px;
+    left:18px;
+    bottom:15px;
+    border-radius:50%;
+    background:#c9e9d2;
+    opacity:.4;
+}
+
+.health-card h3,
+.health-card p{
+    position:relative;
+    z-index:2;
+}
+
+
+/* =====================================================
+   MARKETING
+===================================================== */
+
+.marketing-card{
+    position:relative;
+    padding:27px;
+    overflow:hidden;
+}
+
+.marketing-card::before{
+    content:"";
+    position:absolute;
+    width:115px;
+    height:115px;
+    left:-50px;
+    bottom:-50px;
+    border-radius:50%;
+    background:#dff3e4;
+}
+
+.marketing-card span{
+    position:relative;
+    z-index:2;
+    margin-bottom:15px;
+}
+
+.marketing-card h3,
+.marketing-card p{
+    position:relative;
+    z-index:2;
+}
+
+
+/* =====================================================
+   TENTANG KAMI
+===================================================== */
+
+.tentang-kami{
+    position:relative;
+    min-height:calc(100vh - 72px);
+
+    padding:75px 8% 100px;
+
+    background:
+        radial-gradient(circle at 10% 15%,rgba(35,166,93,.14),transparent 25%),
+        radial-gradient(circle at 90% 85%,rgba(35,166,93,.12),transparent 25%),
+        linear-gradient(135deg,#eaf8ee,#d8efe0);
+
+    text-align:center;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+.tentang-kami::before{
+    content:"✚";
+    position:absolute;
+    top:80px;
+    left:8%;
+    font-size:70px;
+    color:#159447;
+    opacity:.08;
+}
+
+.tentang-kami::after{
+    content:"✚";
+    position:absolute;
+    right:8%;
+    bottom:80px;
+    font-size:90px;
+    color:#159447;
+    opacity:.08;
+}
+
+.tentang-header{
+    position:relative;
+    z-index:2;
+
+    max-width:750px;
+    margin:0 auto 35px;
+}
+
+.tentang-header p:not(.subjudul){
+    color:#53675a;
+    font-size:15px;
+}
+
+.subjudul{
+    display:inline-block;
+
+    color:#087744;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:2px;
+
+    padding:6px 14px;
+    border-radius:20px;
+    background:#dff4e5;
+
+    box-shadow:
+        3px 4px 9px rgba(30,100,55,.10);
+}
+
+.tim-container{
+    position:relative;
+    z-index:2;
+
+    max-width:1000px;
+    width:100%;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.anggota-card{
+    position:relative;
+    padding:27px 15px;
+    overflow:hidden;
+}
+
+.anggota-card::before{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    right:-55px;
+    top:-55px;
+    border-radius:50%;
+    background:#d8f1df;
+}
+
+.anggota-card:hover{
+    transform:translateY(-10px) rotateX(3deg);
+}
+
+.foto-anggota{
+    position:relative;
+    z-index:2;
+
+    width:82px;
+    height:82px;
+
+    margin:0 auto 13px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        radial-gradient(circle at 35% 25%,#fff,#d8f1df,#b9dfc4);
+
+    font-size:38px;
+
+    box-shadow:
+        6px 8px 15px rgba(30,100,55,.17),
+        -4px -4px 10px rgba(255,255,255,.9),
+        inset 3px 3px 6px rgba(255,255,255,.8);
+}
+
+.anggota-card h3{
+    position:relative;
+    z-index:2;
+
+    color:#075e42;
+    font-size:16px;
+    margin-bottom:5px;
+}
+
+.anggota-card p{
+    position:relative;
+    z-index:2;
+
+    color:#6b796e;
+    font-size:13px;
+}
+
+
+/* =====================================================
+   CLOSING
+===================================================== */
+
+.closing-slide{
+    position:relative;
+
+    min-height:calc(100vh - 72px);
+
+    padding:80px 8% 110px;
+
+    background:
+        radial-gradient(circle at 50% 15%,rgba(39,177,96,.20),transparent 30%),
+        radial-gradient(circle at 10% 90%,rgba(39,177,96,.12),transparent 25%),
+        linear-gradient(135deg,#effaf2,#dcefe1);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    overflow:hidden;
+}
+
+.closing-slide::before,
+.closing-slide::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    border:2px solid rgba(21,148,71,.12);
+}
+
+.closing-slide::before{
+    width:400px;
+    height:400px;
+}
+
+.closing-slide::after{
+    width:550px;
+    height:550px;
+}
+
+.closing-icon{
+    position:relative;
+    z-index:2;
+
+    width:125px;
+    height:125px;
+
+    border-radius:35px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(145deg,#ffffff,#cce8d3);
+
+    font-size:58px;
+
+    margin-bottom:28px;
+
+    box-shadow:
+        12px 15px 30px rgba(30,100,55,.18),
+        -7px -7px 18px rgba(255,255,255,.9),
+        inset 3px 3px 8px rgba(255,255,255,.8);
+
+    animation:floatMedicine 4s ease-in-out infinite;
+}
+
+.closing-slide h1{
+    position:relative;
+    z-index:2;
+
+    max-width:800px;
+
+    color:#063f2c;
+    font-size:46px;
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+    text-shadow:
+        0 5px 12px rgba(6,63,44,.12);
+}
+
+.closing-slide h1 span{
+    color:#159447;
+}
+
+.closing-slide>p:not(.subtitle){
+    position:relative;
+    z-index:2;
+
+    max-width:650px;
+    color:#56685b;
+    margin-bottom:30px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    position:relative;
+    padding:40px 20px 105px;
+
+    text-align:center;
+
+    background:
+        linear-gradient(135deg,#cce8d3,#b8ddc3);
+
+    color:#075e42;
+
+    box-shadow:
+        0 -10px 30px rgba(30,100,55,.10);
+
+    overflow:hidden;
+}
+
+footer::before{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    right:-100px;
+    top:-120px;
+    background:rgba(255,255,255,.25);
+}
+
+footer h3,
+footer p,
+footer .copyright{
+    position:relative;
+    z-index:2;
+}
+
+footer h3{
+    color:#075e42;
+    margin-bottom:8px;
+}
+
+footer p{
+    color:#365d43;
+}
+
+footer .copyright{
+    display:inline-block;
+
+    color:#075e42;
+
+    background:#edf9f0;
+
+    padding:8px 18px;
+
+    border-radius:25px;
+
+    margin-top:16px;
+
+    font-size:13px;
+    font-weight:bold;
+
+    box-shadow:
+        5px 6px 12px rgba(30,100,55,.12),
+        inset 2px 2px 5px rgba(255,255,255,.8);
+}
+
+
+/* =====================================================
+   SLIDE NAVIGATION
+===================================================== */
+
+.slide-navigation{
+    position:absolute;
+    z-index:20;
+
+    bottom:25px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+    gap:14px;
+
+    padding:9px 15px;
+
+    background:rgba(255,255,255,.82);
+    backdrop-filter:blur(10px);
+
+    border-radius:40px;
+
+    box-shadow:
+        7px 9px 20px rgba(30,86,47,.15),
+        -4px -4px 12px rgba(255,255,255,.9);
+}
+
+.slide-navigation button{
+    width:42px;
+    height:42px;
+
+    border:none;
+    border-radius:50%;
+
+    background:linear-gradient(145deg,#24a65c,#087744);
+
+    color:white;
+    font-size:18px;
+
+    cursor:pointer;
+
+    box-shadow:
+        4px 5px 10px rgba(7,119,68,.25),
+        inset 2px 2px 4px rgba(255,255,255,.25);
+
+    transition:.25s;
+}
+
+.slide-navigation button:hover{
+    transform:translateY(-4px) scale(1.06);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1000px){
+
+    .nav-menu{
+        gap:10px;
+    }
+
+    .nav-menu a{
+        font-size:11px;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero-icon{
+        width:210px;
+        height:210px;
+    }
+
+    .hero-icon::before{
+        width:240px;
+        height:240px;
+    }
+
+    .card-container,
+    .marketing-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .health-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+
+@media(max-width:768px){
+
+    .navbar{
+        min-height:65px;
+        padding:10px 5%;
+        flex-direction:column;
+        gap:8px;
+    }
+
+    .logo{
+        font-size:17px;
+    }
+
+    .nav-menu{
+        width:100%;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:7px 12px;
+    }
+
+    .slider-container{
+        padding-top:105px;
+    }
+
+    .slide{
+        min-height:calc(100vh - 105px);
+    }
+
+    .hero{
+        min-height:calc(100vh - 105px);
+
+        flex-direction:column;
+        justify-content:center;
+
+        text-align:center;
+
+        padding:55px 7% 105px;
+        gap:45px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero-text>p:not(.subtitle){
+        font-size:15px;
+    }
+
+    .hero-icon{
+        width:165px;
+        height:165px;
+        font-size:72px;
+    }
+
+    .hero-icon::before{
+        width:190px;
+        height:190px;
+    }
+
+    .section{
+        min-height:calc(100vh - 105px);
+        padding:55px 6% 110px;
+    }
+
+    .section-title h2,
+    .tentang-header h2{
+        font-size:30px;
+    }
+
+    .history-container{
+        grid-template-columns:1fr;
+    }
+
+    .history-card:last-child{
+        grid-column:span 1;
+    }
+
+    .card-container,
+    .marketing-container{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .tim-container{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .tentang-kami{
+        min-height:calc(100vh - 105px);
+        padding:55px 6% 110px;
+    }
+
+    .closing-slide{
+        min-height:calc(100vh - 105px);
+        padding:60px 7% 110px;
+    }
+
+    .closing-slide h1{
+        font-size:35px;
+    }
+}
+
+
+@media(max-width:500px){
+
+    .nav-menu{
+        gap:5px 8px;
+    }
+
+    .nav-menu a{
+        font-size:10px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero-icon{
+        width:145px;
+        height:145px;
+        font-size:62px;
+    }
+
+    .hero-icon::before{
+        width:170px;
+        height:170px;
+    }
+
+    .section-title h2,
+    .tentang-header h2{
+        font-size:27px;
+    }
+
+    .card-container,
+    .health-container,
+    .marketing-container,
+    .tim-container{
+        grid-template-columns:1fr;
+    }
+
+    .history-card{
+        flex-direction:column;
+    }
+
+    .info-item{
+        align-items:flex-start;
+    }
+
+    .warning-box,
+    .danger-box,
+    .ethics-box{
+        padding:20px;
+    }
+
+    .slide-navigation{
+        bottom:15px;
+        gap:10px;
+        padding:7px 11px;
+    }
+
+    .slide-navigation button{
+        width:37px;
+        height:37px;
+    }
+
+    .closing-slide h1{
+        font-size:30px;
+    }
+}
+/* ================================
+   TOMBOL NAVIGASI SLIDE
+================================ */
+
+.slide-buttons{
+    position:absolute;
+    z-index:30;
+    bottom:28px;
+    left:50%;
+    transform:translateX(-50%);
+
+    display:flex;
+    gap:14px;
+    padding:9px 12px;
+
+    background:rgba(255,255,255,.82);
+    backdrop-filter:blur(10px);
+    border-radius:40px;
+
+    box-shadow:
+        7px 9px 20px rgba(30,86,47,.15),
+        -4px -4px 12px rgba(255,255,255,.9);
+}
+
+.slide-buttons button{
+    border:none;
+    padding:11px 22px;
+    border-radius:30px;
+
+    background:linear-gradient(145deg,#24a65c,#087744);
+
+    color:white;
+    font-size:13px;
+    font-weight:bold;
+    cursor:pointer;
+
+    box-shadow:
+        4px 5px 10px rgba(7,119,68,.25),
+        inset 2px 2px 4px rgba(255,255,255,.25);
+
+    transition:.25s;
+}
+
+.slide-buttons button:hover{
+    transform:translateY(-4px);
+}
+
+.slide-buttons button:active{
+    transform:translateY(2px);
+}
+
+
+/* ================================
+   COPYRIGHT TERIMA KASIH
+================================ */
+
+.closing-copyright{
+    margin-top:28px;
+    padding:9px 20px;
+
+    display:inline-block;
+
+    border-radius:25px;
+
+    background:#edf9f0;
+    color:#075e42 !important;
+
+    font-size:13px !important;
+    font-weight:bold;
+
+    box-shadow:
+        5px 6px 12px rgba(30,100,55,.12),
+        inset 2px 2px 5px rgba(255,255,255,.8);
+}
+/* Membuat tombol navigasi berada di dalam setiap slide */
+.slide{
+    position:relative;
+}
+/* ========================================
+   MODE SCROLL KE BAWAH
+======================================== */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+/* Semua slide ditampilkan sekaligus */
+.slide {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+}
+
+
+/* Container tidak lagi menjadi slider */
+.slider-container {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+
+/* Jarak dari navbar ketika melakukan scroll */
+#beranda,
+#sejarah,
+#pengertian,
+#jenis,
+#penggunaan,
+#efek-samping,
+#healthy-lifestyle,
+#pemasaran,
+#tentang-kami {
+    scroll-margin-top: 90px;
+}
+
+
+/* Hilangkan navigasi slide */
+.slide-buttons {
+    display: none !important;
+}
+
+
+/* Section menjadi bagian halaman biasa */
+.section {
+    min-height: auto;
+}
+
+
+/* Beranda tetap dibuat tinggi agar terlihat seperti halaman pembuka */
+#beranda {
+    min-height: calc(100vh - 80px);
+}
